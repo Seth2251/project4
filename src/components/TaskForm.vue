@@ -19,9 +19,9 @@
 
 <template>
     <div>
-      <h2>Add a New Task</h2>
+      <h2>Add your New Task</h2>
       <form @submit.prevent="addTask">
-        <input v-model="taskTitle" placeholder="Task title" required />
+        <input v-model="taskTitle" placeholder="Please Enter a New Task" required />
         <button type="submit">Add Task</button>
       </form>
     </div>
@@ -31,10 +31,20 @@
   
   <style scoped>
   input {
-    padding: 5px;
-    margin-right: 10px;
-  }
-  button {
-    padding: 5px;
-  }
+  padding: 8px;
+  margin-right: 12px;
+  font-size: 16px; /* Larger text */
+}
+
+button {
+  padding: 8px 16px; 
+  background-color: black; 
+  color: green; 
+  border: none;
+  border-radius: 4px; 
+}
+
+button:hover {
+  background-color: purple; 
+}
   </style>
