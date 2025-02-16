@@ -1,10 +1,11 @@
 <script>
-import TaskForm from './components/TaskForm.vue';
 import TaskList from './components/TaskList.vue';
-import TaskStats from './components/TaskStats.vue';
+import TaskForm from './components/TaskForm.vue';
+import TaskStats from './components/TaskStatus.vue';
+
 
 export default {
-components: {
+  components: {
     TaskForm,
     TaskList,
     TaskStats
@@ -15,16 +16,16 @@ components: {
     };
   },
   methods: {
-  addTask(task) {
+    addTask(task) {
       this.tasks.push(task);
     },
-  toggleCompletion(taskId) {
+    toggleCompletion(taskId) {
       const task = this.tasks.find(t => t.id === taskId);
       if (task) {
         task.completed = !task.completed;
       }
     },
-  deleteTask(taskId) {
+    deleteTask(taskId) {
       this.tasks = this.tasks.filter(t => t.id !== taskId);
     }
   }
